@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}My Posts{% endblock %}
+
+{% block content %}
+<h2>My Posts</h2>
+
+{% if posts %}
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{% url 'post' id=post.id %}">{{post.title}}</a> 
+                <h5>Created on: {{post.date|date:"F j, Y"}}</h5>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No posts yet.</p>
+{% endif %}
+
+<p><a href="{% url 'new_post' %}">Create New post</a></p>
+
+{% endblock %}
