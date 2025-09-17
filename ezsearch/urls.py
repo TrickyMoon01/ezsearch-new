@@ -20,6 +20,8 @@ from django.urls import path, include
 from main_app import views
 from django.urls import path
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -39,3 +41,6 @@ urlpatterns = [
     path("posts/<int:id>/delete/", views.delete_post, name="delete_post"),
     # path('', include('main_app.urls')), # Mounts main_app's routes at the root URL
 ]
+
+if settings.DEBUG is False:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

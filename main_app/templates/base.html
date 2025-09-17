@@ -5,14 +5,43 @@
   <head>
     <meta charset="UTF-8" />
     <title>{% block title %}EzSearch{% endblock %}</title>
+    {% block head %} 
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <style>
+      h1 {
+      a, a:active, a:visited {
+      text-decoration: none;
+      color: black;
+       &:hover {
+          transform: 5px, 5px;
+          color: blue;
+      }}}
+      header, nav {
+        display: flex;
+        gap: 10px;
+      }
+      header {
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 50px;
+        margin-top: -15px;
+      }
+      main {
+        padding: 0px 50px; 
+      }
+      footer {
+        padding: 0px 50px;
+      }
+
+    </style>
+    {% endblock %}
   </head>
   <body>
     <header>
-      <h1>EzSearch</h1>
+      <h1><a href="{% url 'home' %}">EzSearch</a></h1>
       <nav>
-        <a href="{% url 'home' %}">Home</a> {% if user.is_authenticated %}
-        <a href="{% url 'new_post' %}">New post</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'new_post' %}">New Post</a>
         <a href="{% url 'posts' %}">Posts</a>
         <form method="post" action="{% url 'logout' %}">
           {% csrf_token %}

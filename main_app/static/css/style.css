@@ -1,3 +1,7 @@
-spline-viewer {
-    height: calc(100vh - 281px);
+body {
+    margin: 0px;
+}
+a, a:active, a:visited {
+    text-decoration: none;
+    color: black;
 }
