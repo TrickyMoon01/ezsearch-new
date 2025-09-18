@@ -4,6 +4,10 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm, Save
 from .models import Post
+import requests
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 
 # Create your views here.
@@ -66,3 +70,28 @@ def post(request,id):
 def posts(request):
     posts = Post.objects.filter(creator=request.user)
     return render(request, 'posts.html', {"posts": posts})
+
+
+def search(request):
+    results=[]
+    if request.method == "POST":
+        query=request.POST.get("q")
+        response=requests.get(
+            "https://api.search.brave.com/res/v1/web/search",
+            headers={
+                "Accept": "application/json",
+                "Accept-Encoding": "gzip",
+                "X-Subscription-Token": os.environ.get("BRAVE_API")
+            },
+            params={
+                "q": query,
+                "count": 20,
+                "country": "us",
+                "search_lang": "en",
+            },
+        )
+        if response.status_code==200:
+            data=response.json()
+            results=data.get("web", {}).get("results", [])
+    return render(request, "search.html", {"results":results})
+

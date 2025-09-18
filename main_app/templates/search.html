@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Search{% endblock %}
+
+{% block content %}
+<h2>Search</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="search" name="q" placeholder="Search here">
+    <button type="submit">Search</button>
+</form>
+{% if results %}
+<h1>Search Results</h1>
+    <ul>
+        {% for item in results %}
+            <li>
+                <a href="{{item.url}}">{{item.title}}</a> 
+                <div>{{item.description}}</div>
+                <img width="40px" src="{{item.profile.img}}">
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No results.</p>
+{% endif %}
+
+{% endblock %}
