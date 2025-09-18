@@ -72,8 +72,17 @@ def posts(request):
     return render(request, 'posts.html', {"posts": posts})
 
 
+results=[]
 def search(request):
-    results=[]
+    global results
+    if request.method == "POST" and "save" in request.POST:
+        title = request.POST.get("title")
+        url = request.POST.get("url")
+        print(url)
+        description = request.POST.get("description")
+        Post.objects.create(title=title, url=url, text=description, creator=request.user)
+        return render(request, "search.html", {"results":results})
+
     if request.method == "POST":
         query=request.POST.get("q")
         response=requests.get(
@@ -94,4 +103,3 @@ def search(request):
             data=response.json()
             results=data.get("web", {}).get("results", [])
     return render(request, "search.html", {"results":results})
-

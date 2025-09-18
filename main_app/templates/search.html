@@ -14,8 +14,15 @@
         {% for item in results %}
             <li>
                 <a href="{{item.url}}">{{item.title}}</a> 
-                <div>{{item.description}}</div>
+                <div>{{item.description|safe}}</div>
                 <img width="40px" src="{{item.profile.img}}">
+                <form method="post" style="display:inline">
+                    {% csrf_token %}
+                    <input type="hidden" name="title" value="{{item.title}}">
+                    <input type="hidden" name="url" value="{{item.url}}">
+                    <input type="hidden" name="description" value="{{item.description}}">
+                    <button type="submit" name="save">Save</button>
+                </form>
             </li>
         {% endfor %}
     </ul>

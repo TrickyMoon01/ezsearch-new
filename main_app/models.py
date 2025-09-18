@@ -6,10 +6,9 @@ from django.contrib.auth.models import User
 class Post(models.Model):
     title = models.CharField(max_length=200, blank=False)
     text = models.TextField(blank=False)
+    url = models.TextField(blank=True)
     date = models.DateTimeField(auto_now_add=True)
     creator = models.ForeignKey(User, on_delete=models.CASCADE,blank=False)
 
     def __str__(self):
         return self.title
-
-
