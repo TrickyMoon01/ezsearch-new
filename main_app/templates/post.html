@@ -1,6 +1,41 @@
-{% extends "base.html" %} 
-{% block title %}{{post.title}}{% endblock %} 
-{% block content %}
+{% extends "base.html" %} {% block content %} {% load static %}
+
+<section style="background: url('{% static "images/background2.jpg" %}'); 
+background-size: cover;  
+background-position: center; 
+position: absolute; 
+top: 53px; 
+left: 0; 
+right: 0; 
+bottom: 0;">
+<style>
+  h2 {
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+  }
+  h5 {
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+  }
+  p {
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+  }
+  form {
+    margin: auto;
+    text-align: center;
+    gap: 5px;
+  }
+  header {
+    background-color: cornflowerblue;
+  }
+  body {
+    margin: 0px;
+  }
+</style>
 
 <h2>{{post.title}}</h2>
 <h5>Created on: {{post.date|date:"F j, Y"}} by {{post.creator.username}}</h5>

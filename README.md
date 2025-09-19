@@ -4,7 +4,7 @@ EzSearch lets you browse the web privately and efficiently using the Brave Searc
 
 ## Getting Started
 
-[Deployed Project]()
+[Deployed Project](https://ezsearch-23aabc39de16.herokuapp.com/)
 
 Try out EzSearch here!
 

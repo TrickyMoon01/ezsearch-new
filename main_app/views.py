@@ -80,7 +80,6 @@ def search(request):
     if request.method == "POST" and "save" in request.POST:
         title = request.POST.get("title")
         url = request.POST.get("url")
-        print(url)
         description = request.POST.get("description")
         Post.objects.create(title=title, url=url, text=description, creator=request.user)
         for item in results:
