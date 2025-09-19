@@ -37,12 +37,28 @@
         padding: 0px 50px;
       }
       a {
-        margin-top: 10px;
+        margin-top: 12px;
       }
       button {
-        margin-top: 10px;
+        margin-top: 11px;
+        border-radius: 10px;
+        background-color: dodgerblue;
+      }
+      h1 {
+        margin-bottom: 11px;
+      }
+      header {
+        font-family: "Averia Gruesa Libre", system-ui;
+        font-weight: 400;
+        font-style: normal;
       }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Caveat:wght@400..700&family=Lilita+One&display=swap"
+      rel="stylesheet"
+    />
     {% endblock %}
   </head>
   <body>
@@ -63,8 +79,5 @@
       </nav>
     </header>
     <main>{% block content %}{% endblock %}</main>
-    {% comment %}
-    <footer><p>&copy; 2025 EzSearch</p></footer>
-    {% endcomment %}
   </body>
 </html>
