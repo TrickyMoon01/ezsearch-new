@@ -5,17 +5,22 @@
   <head>
     <meta charset="UTF-8" />
     <title>{% block title %}EzSearch{% endblock %}</title>
-    {% block head %} 
+    {% block head %}
     <style>
       h1 {
-      a, a:active, a:visited {
-      text-decoration: none;
-      color: black;
-       &:hover {
-          transform: 5px, 5px;
-          color: blue;
-      }}}
-      header, nav {
+        a,
+        a:active,
+        a:visited {
+          text-decoration: none;
+          color: black;
+          &:hover {
+            transform: 5px, 5px;
+            color: blue;
+          }
+        }
+      }
+      header,
+      nav {
         display: flex;
         gap: 10px;
       }
@@ -26,12 +31,17 @@
         margin-top: -15px;
       }
       main {
-        padding: 0px 50px; 
+        padding: 0px 50px;
       }
       footer {
         padding: 0px 50px;
       }
-
+      a {
+        margin-top: 10px;
+      }
+      button {
+        margin-top: 10px;
+      }
     </style>
     {% endblock %}
   </head>
@@ -53,6 +63,8 @@
       </nav>
     </header>
     <main>{% block content %}{% endblock %}</main>
+    {% comment %}
     <footer><p>&copy; 2025 EzSearch</p></footer>
+    {% endcomment %}
   </body>
 </html>

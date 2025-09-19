@@ -11,6 +11,7 @@ load_dotenv()
 
 
 # Create your views here.
+results=[]
 @login_required(login_url="login")
 def home (request):
     return render(request, 'home.html')
@@ -68,11 +69,12 @@ def post(request,id):
 
 @login_required
 def posts(request):
+    global results
+    results = []
     posts = Post.objects.filter(creator=request.user)
     return render(request, 'posts.html', {"posts": posts})
 
 
-results=[]
 def search(request):
     global results
     if request.method == "POST" and "save" in request.POST:
@@ -81,6 +83,10 @@ def search(request):
         print(url)
         description = request.POST.get("description")
         Post.objects.create(title=title, url=url, text=description, creator=request.user)
+        for item in results:
+            if item.get("url")==url:
+                item["saved"]=True
+                break
         return render(request, "search.html", {"results":results})
 
     if request.method == "POST":

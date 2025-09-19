@@ -1,8 +1,37 @@
-{% extends "base.html" %} 
+{% extends "base.html" %} {% block content %} 
+{% load static %}
 
-{% block title %}Create Post{% endblock %}
-
-{% block content %}
+<section style="background: url('{% static "images/background4.jpg" %}'); 
+background-size: cover;  
+background-position: center; 
+position: absolute; 
+top: 65px; 
+left: 0; 
+right: 0; 
+bottom: 0;">
+<style>
+  h2 {
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+  }
+  p {
+    margin: auto;
+    text-align: center;
+    margin-top: 7px;
+  }
+  form {
+    margin: auto;
+    text-align: center;
+    gap: 5px;
+  }
+  header {
+    background-color: cornflowerblue;
+  }
+  body {
+    margin: 0px;
+  }
+</style>
 
 <h2>Create a New Post</h2>
 <form method="post">

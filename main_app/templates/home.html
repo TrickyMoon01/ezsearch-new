@@ -1,17 +1,22 @@
 {% load static %}
 <head>
-    {% block head %} 
-    <style>
-        body {
-            margin: 0px;
-        }
-    </style>
-    {% endblock %}
+  {% block head %}
+  <style>
+    body {
+      margin: 0px;
+    }
+  </style>
+  {% endblock %}
 </head>
 {% block content %}
 
 <!-- <h2>Welcome to the Home Page!</h2> -->
 
-<script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.57/build/spline-viewer.js"></script>
-<spline-viewer url="https://prod.spline.design/yZCG1mQN6Jr64yZb/scene.splinecode"></spline-viewer>
+<script
+  type="module"
+  src="https://unpkg.com/@splinetool/viewer@1.10.57/build/spline-viewer.js"
+></script>
+<spline-viewer
+  url="https://prod.spline.design/yZCG1mQN6Jr64yZb/scene.splinecode"
+></spline-viewer>
 {% endblock %}
