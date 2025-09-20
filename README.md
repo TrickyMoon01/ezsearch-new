@@ -27,4 +27,4 @@ Using the Brave Search API, you can browse and save urls directly from Brave to 
 
 ## Next Steps
 
-* 
+* Fix Heroku issues with Brave API
