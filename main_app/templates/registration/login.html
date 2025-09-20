@@ -32,7 +32,11 @@ bottom: 0;">
   body {
     margin: 0px;
   }
+  button {
+    font-size: 20px;
+  }
 </style>
+<div style="margin-top: 25vh; transform: translate(0, 50%)" class="bg">
 <h2>Login</h2>
 <form method="post">
   {% csrf_token %} {{ form.as_p }} <button type="submit">Login</button>
@@ -40,4 +44,4 @@ bottom: 0;">
 {% if form.errors %}
 
 <p style="color: red">Invalid username or password</p>
-{% endif %} </section> {% endblock %}
+{% endif %} </section> </div> {% endblock %}

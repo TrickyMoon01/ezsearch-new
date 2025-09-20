@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 
-<section style="background: url('{% static "images/background4.jpg" %}'); 
+<section style="background: url('{% static "images/background6.jpg" %}'); 
 background-size: cover;  
 background-position: center; 
 position: absolute; 
@@ -30,11 +30,16 @@ bottom: 0;">
   body {
     margin: 0px;
   }
+  form {
+    .button {
+      font-size: 20px;
+    }
+  }
 </style>
-
+<div style="margin-top: 5vh; transform: translate(0, 50%);" class="bg">
 <h2>Update Post</h2>
 <form method="post">
-  {% csrf_token %} {{ form.as_p }} <button type="submit">Update</button>
+  {% csrf_token %} {{ form.as_p }} <button type="submit" class="button">Update</button>
 </form>
 <p><a href="{% url 'post' id=post.id %}">Cancel</a></p>
-{% endblock %}
+</section> </div>{% endblock %}

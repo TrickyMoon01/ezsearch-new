@@ -29,15 +29,25 @@ bottom: 0;">
   body {
     margin: 0px;
   }
+  h5 {
+    margin-top: 7px;
+    color: midnightblue;
+  }
+  ul {
+    .text {
+      color: black;
+    }
+    font-size: 27px;
+  }
 </style>
-
+<div style="margin-top: 15px;">
 <h2>My Saves</h2>
 
 {% if posts %}
 <ul>
   {% for post in posts %}
   <li>
-    <a href="{% url 'post' id=post.id %}">{{post.title}}</a>
+    <a href="{% url 'post' id=post.id %}" class="text">{{post.title}}</a>
     <h5>Created on: {{post.date|date:"F j, Y"}}</h5>
   </li>
   {% endfor %}
@@ -46,4 +56,4 @@ bottom: 0;">
 <p>No posts yet.</p>
 {% endif %}
 
-</section>{% endblock %}
+</section> </div>{% endblock %}

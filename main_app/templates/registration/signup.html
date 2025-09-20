@@ -15,16 +15,21 @@ bottom: 0;">
     margin: auto;
     text-align: center;
     margin-top: 10px;
+    font-size: 30px;
   }
   p {
     margin: auto;
     text-align: center;
     margin-top: 5px;
+    .helptext{
+      display: block;
+    }
   }
   form {
     margin: auto;
     text-align: center;
     gap: 5px;
+    font-size: 30px;
   }
   header {
     background-color: cornflowerblue;
@@ -32,9 +37,15 @@ bottom: 0;">
   body {
     margin: 0px;
   }
+  button {
+    font-size: 20px;
+  }
 </style>
+<div style="margin-top: 0vh; transform: translate(0, 50%);" class="bg">
 <h2>Register</h2>
 <form method="post">
   {% csrf_token %} {{ form.as_p }} <button type="submit">Sign Up</button>
 </form>
+</div>
+</section>
 {% endblock %}

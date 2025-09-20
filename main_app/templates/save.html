@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 
-<section style="background: url('{% static "images/background4.jpg" %}'); 
+<section style="background: url('{% static "images/background3.jpeg" %}'); 
 background-size: cover;  
 background-position: center; 
 position: absolute; 
@@ -30,10 +30,15 @@ bottom: 0;">
   body {
     margin: 0px;
   }
+  form {
+    .button {
+      font-size: 20px;
+    }
+  }
 </style>
-
+<div style="margin-top: 5vh; transform: translate(0, 50%);" class="bg">
 <h2>Create a New Post</h2>
 <form method="post">
-  {% csrf_token %} {{ form.as_p }} <button type="submit">Save</button>
+  {% csrf_token %} {{ form.as_p }} <button type="submit" class="button">Save</button>
 </form>
-{% endblock %}
+</section></div> {% endblock %}

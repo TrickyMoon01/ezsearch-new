@@ -35,19 +35,25 @@ bottom: 0;">
   body {
     margin: 0px;
   }
+  form {
+    .button {
+      font-size: 20px;
+    }
+  }
 </style>
-
+<div style="margin-top: 250px;" class="bg">
 <h2>{{post.title}}</h2>
 <h5>Created on: {{post.date|date:"F j, Y"}} by {{post.creator.username}}</h5>
 <p>{{post.text|safe}}</p>
+{% if post.url %}
 <p><a href="{{ post.url|cut:"('"|cut:"',)" }}" target="_blank">Link</a></p>
-
+{% endif %}
 
 {% if user.is_authenticated and user == post.creator %}
     <p><a href="{% url 'update_post' id=post.id %}">Edit</a></p>
     <form method="post" action="{% url 'delete_post' id=post.id %}">
         {% csrf_token %}
-        <button type="submit">Delete</button>
+        <button type="submit" class="button">Delete</button>
     </form>
 {% endif %} 
-{% endblock %}
+  </section></div> {% endblock %}

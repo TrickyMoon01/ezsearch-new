@@ -5,31 +5,50 @@
     margin: auto;
     text-align: center;
     margin-top: 10px;
+    font-size: 40px;
   }
   p {
     margin: auto;
     text-align: center;
     margin-top: 5px;
+    font-size: 25px;
   }
   form {
     margin: auto;
     text-align: center;
     gap: 5px;
   }
-  header {
+  header{
     background-color: cornflowerblue;
   }
   body {
     background-color: beige;
     margin: 0px;
   }
+  form {
+    .button {
+      color: black;
+      background-color: lightgray;
+      font-size: 20px;
+    }
+  }
+  input {
+    font-size: 25px;
+  }
+  div {
+    color: dimgray;
+  }
+  li {
+    a, a:visited {
+      color: royalblue;
+    }
+  }
 </style>
-
 <h2>EzSearch</h2>
 <form method="post">
   {% csrf_token %}
   <input type="search" name="q" placeholder="Search here" />
-  <button type="submit">Search</button>
+  <button type="submit" class="button">Search</button>
 </form>
 {% if results %}
 <h1>Search Results</h1>
@@ -55,4 +74,4 @@
 </ul>
 {% else %}
 <p>No results.</p>
-{% endif %} {% endblock %}
+{% endif %} </section> {% endblock %}
