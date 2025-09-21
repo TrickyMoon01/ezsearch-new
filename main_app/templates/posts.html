@@ -23,6 +23,11 @@ bottom: 0;">
     }
     font-size: 27px;
   }
+  .noresults {
+    margin: auto;
+    text-align: center;
+    margin-top: 25px;
+  }
 </style>
 <div style="margin-top: 15px;">
 <h2>My Saves</h2>
@@ -37,7 +42,7 @@ bottom: 0;">
   {% endfor %}
 </ul>
 {% else %}
-<p>No posts yet.</p>
+<p class="noresults">No posts yet.</p>
 {% endif %}
 
 </section> </div>{% endblock %}
