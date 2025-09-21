@@ -4,20 +4,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'images/favicon.png' %}"
+    />
     <title>{% block title %}EzSearch{% endblock %}</title>
     {% block head %}
     <style>
-        a,
-        a:active,
-        a:visited {
-          text-decoration: none;
-          color: black;
-          &:hover {
-            transform: 5px, 5px;
-            color: blue;
-          }
+      a,
+      a:active,
+      a:visited {
+        text-decoration: none;
+        color: black;
+        &:hover {
+          transform: 5px, 5px;
+          color: blue;
         }
+      }
       header,
       nav {
         display: flex;
@@ -27,45 +31,40 @@
         justify-content: space-between;
         align-items: center;
         padding: 0px 50px;
-        margin-top: -13px;
+        font-family: "Averia Gruesa Libre", system-ui;
+        font-style: normal;
+        font-size: 18px;
+        background-color: cornflowerblue;
+        height: 53px;
       }
       main {
         padding: 0px 50px;
       }
-      footer {
-        padding: 0px 50px;
-      }
       a {
-        margin-top: 12px;
+        margin-top: 13px;
       }
       button {
         margin-top: 11px;
         border-radius: 10px;
         background-color: dodgerblue;
       }
-      h1 {
-        margin-bottom: 11px;
-        font-family: "Caveat", cursive;
-        font-optical-sizing: auto;
-        font-style: normal;
-        font-size: 30px;
-      }
-      header {
-        font-family: "Averia Gruesa Libre", system-ui;
-        font-weight: 400;
-        font-style: normal;
-      }
       h2 {
         font-family: "Caveat", cursive;
         font-optical-sizing: auto;
         font-style: normal;
         font-size: 30px;
+        margin: auto;
+        text-align: center;
+        margin-top: 10px;
       }
       form {
         font-family: "Caveat", cursive;
         font-optical-sizing: auto;
         font-style: normal;
         font-size: 30px;
+        margin: auto;
+        text-align: center;
+        gap: 5px;
       }
       p {
         font-family: "Caveat", cursive;
@@ -99,8 +98,11 @@
         font-style: normal;
         font-size: 22px;
       }
-      a {
-        margin-top: 15px;
+      .logoutbutton {
+        margin-bottom: 12px;
+      }
+      body {
+        margin: 0px;
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -121,7 +123,7 @@
         <a href="{% url 'posts' %}">Saves</a>
         <form method="post" action="{% url 'logout' %}">
           {% csrf_token %}
-          <button type="submit">Logout</button>
+          <button type="submit" class="logoutbutton">Logout</button>
         </form>
         {% else %}
         <a href="{% url 'login' %}">Login</a>

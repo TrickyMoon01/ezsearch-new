@@ -2,9 +2,6 @@
 
 <style>
   h2 {
-    margin: auto;
-    text-align: center;
-    margin-top: 10px;
     font-size: 40px;
   }
   p {
@@ -13,17 +10,8 @@
     margin-top: 5px;
     font-size: 25px;
   }
-  form {
-    margin: auto;
-    text-align: center;
-    gap: 5px;
-  }
-  header{
-    background-color: cornflowerblue;
-  }
   body {
     background-color: beige;
-    margin: 0px;
   }
   form {
     .button {
@@ -43,6 +31,13 @@
       color: royalblue;
     }
   }
+  .title {
+    margin-bottom: 11px;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 30px;
+    }
 </style>
 <h2>EzSearch</h2>
 <form method="post">
@@ -51,7 +46,7 @@
   <button type="submit" class="button">Search</button>
 </form>
 {% if results %}
-<h1>Search Results</h1>
+<h1 class="title">Search Results</h1>
 <ul>
   {% for item in results %}
   <li>
