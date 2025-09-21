@@ -52,7 +52,7 @@
   <li>
     <a href="{{item.url}}">{{item.title}}</a>
     <div>{{item.description|safe}}</div>
-    <img width="40px" src="{{item.profile.img}}" />
+    <img width="40px" src="{{item.profile.img}}" alt="{{item.title}}" />
     {% if "saved" in item %}
     <input type="checkbox" checked disabled />
     {% else %}
